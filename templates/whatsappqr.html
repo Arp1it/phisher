@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #25D366; /* WhatsApp Green */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 350px;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 80px;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #075E54;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            margin: 20px 0;
+        }
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .instructions {
+            font-size: 1rem;
+            color: #075E54;
+            margin-bottom: 20px;
+        }
+        .footer {
+            font-size: 0.9rem;
+            color: #075E54;
+        }
+        .footer a {
+            color: #075E54;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+        </div>
+        <div class="title">Scan to Log in to WhatsApp</div>
+        <div class="qr-code">
+            <!-- QR Code Image -->
+            <img src="https://www.qr-code-generator.com/wp-content/uploads/2021/01/qr-code-sample.png" alt="QR Code">
+        </div>
+        <div class="instructions">
+            Open WhatsApp on your phone and scan the QR code to log in to WhatsApp Web.
+        </div>
+        <div class="footer">
+            <p>Don't have WhatsApp? <a href="#">Download now</a></p>
+            <p>Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>
