@@ -97,7 +97,7 @@ else:
 @app.route("/")
 def hello_world():
     
-    return render_template(f"{optiosn[e]}")
+    return render_template(f"{optiosn[chhosse]}")
 
 if __name__ == "__main__":
     sss = input(termcolor.colored("\n\nAre you want we start ngrok or you start itself Y for yes N for no!: ", "red"))
