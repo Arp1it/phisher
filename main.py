@@ -74,7 +74,9 @@ ascii_art = pyfiglet.figlet_format(text)
 color = ["green", "yellow", "white", "cyan", "blue", "light_red", "magenta"]
 print(termcolor.colored(ascii_art, random.choice(color)))
 
-print(f"{purple}--> insta → Instagram")
+print(f"{red}                                 Github:-https://github.com/Arp1it")
+
+print(f"\n\n{purple}--> insta → Instagram")
 print(f"{green}--> meta → Facebook")
 print(f"{purple}--> gmail → Gmail")
 print(f"{green}--> snap → Snapchat")
