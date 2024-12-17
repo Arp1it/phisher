@@ -20,6 +20,9 @@ This is a Python-based phishing tool designed to demonstrate how phishing pages 
 - Custom redirect URL after credentials are captured  
 - Ngrok integration for exposing localhost to the public  
 - Simple setup and modular design  
+- Network status check  
+
+> **More features coming soon!**
 
 ---
 
@@ -50,13 +53,15 @@ Ensure the following software and libraries are installed:
    ```
 
 3. **Choose Phishing Page Type**  
-   Enter one of the following options when prompted:  
-   - `insta` → Instagram  
-   - `meta` → Facebook  
-   - `gmail` → Gmail  
-   - `snap` → Snapchat  
-   - `tele` → Telegram  
-   - `x` → Twitter  
+   The tool will display available options:  
+   ```plaintext
+   --> insta → Instagram
+   --> meta → Facebook
+   --> gmail → Gmail
+   --> snap → Snapchat
+   --> tele → Telegram
+   --> x → Twitter
+   ```
 
 4. **Provide a Custom Redirect URL**  
    After credentials are captured, victims will be redirected to this URL.
@@ -88,6 +93,14 @@ Python Phisher Initializing...
  | )   ( || (___) || (___) || (____/\|  (__) |
  |/     \|(_______)(_______)(_______/(_______)
 
+--> insta → Instagram
+--> meta → Facebook
+--> gmail → Gmail
+--> snap → Snapchat
+--> tele → Telegram
+--> x → Twitter
+                   More Features Are Comming Soon!
+
 Enter port number here (Default port - 8096): 8080
 Enter: insta
 Enter Custom Url: https://example.com
@@ -101,6 +114,12 @@ Enter ngrok authtoken: YOUR_NGROK_AUTH_TOKEN
 
 * Running on http://127.0.0.1:8080
 Public URL: https://abcd1234.ngrok.io
+```
+
+### Network Status Check  
+The tool verifies internet connectivity:  
+```plaintext
+Network Working!
 ```
 
 ### Capturing Credentials  
@@ -130,9 +149,9 @@ Contributions for improving this tool are welcome. Create a pull request or open
 
 ## Author  
 **.Echo Cipher**  
-[Nexus Shroud] 
-[Arp1it](https://github.com/Arp1it)
+Nexus Shroud
+[Arp1it](https://github.com/Arp1it)  
 
 ---
 
-**Stay Ethical, Stay Safe!**  
+**Stay Ethical, Stay Safe!**
