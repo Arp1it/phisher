@@ -97,10 +97,12 @@ Python Phisher Initializing...
 --> snap → Snapchat
 --> tele → Telegram
 --> x → Twitter
-                   More Features Are Comming Soon!
+
+More Features Are Comming Soon!
 
 Enter port number here (Default port - 8096): 8080
 Enter: insta
+
 Enter Custom Url: https://example.com
 ```
 
